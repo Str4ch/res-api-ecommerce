@@ -1,19 +1,19 @@
 const express = require("express");
 const router = express.Router();
+const { hashPassword } = require("../middleware/passencrypt");
 
 router.get("/", (req, res) =>{
     res.send("Users page");
 });
 
-router.post("/", (req, res) =>{
+router.post("/", hashPassword, (req, res) =>{
     // Get the data from the request
-    console.log(req.body);
-    const { firstName, email, password } = req.body;
-
+    const { firstName, email} = req.body;
+    const hashedPassword = req.hashedPassword;
     res.json({
     firstName,
     email,
-    password,
+    hashedPassword,
     _id: "randomId4567"
     })
 });
