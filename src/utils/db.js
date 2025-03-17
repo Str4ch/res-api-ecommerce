@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 const dotenv = require("dotenv")
 uri = process.env.DB_CONNECTION
-const mongoConnection = "mongodb://127.0.0.1:27017" || uri;
+const mongoConnection = uri || "mongodb://127.0.0.1:27017";
 
 mongoose.set("strictQuery", true)
 
