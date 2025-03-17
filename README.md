@@ -22,3 +22,7 @@
 - Hosting: Render
 - `dotenv` for managing environment variables
 - helmet & CORS for security
+
+## UML Representation
+
+![UML diagram](res-api-ecommerce.svg "UML diagram")
