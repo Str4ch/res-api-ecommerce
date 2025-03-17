@@ -1,5 +1,6 @@
 const mongoose = require("mongoose")
 const dotenv = require("dotenv")
+dotenv.config()
 uri = process.env.DB_CONNECTION
 const mongoConnection = uri || "mongodb://127.0.0.1:27017";
 
