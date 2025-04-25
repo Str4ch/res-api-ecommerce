@@ -1,12 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const { hashPassword } = require("../middleware/passencrypt");
-const upload = require("../middleware/multerConfig")
+const upload = require("../middleware/multerConfig");
+const sharpMiddleware = require("../middleware/sharpMiddleware");
 
 const { userLogIn, userSignUp } = require("../controllers/userControllers");
 const { verifyToken } = require("../middleware/auth");
 
-router.post("/login", userLogIn)
+router.post("/login", userLogIn);
 
 router.post("/signup", hashPassword, userSignUp);
 

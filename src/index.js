@@ -6,6 +6,8 @@ const port = 3000;
 
 
 const userRoutes = require("./routes/users");
+const productRoutes = require("./routes/products");
+const invoiceRouters = require("./routes/invoices");
 
 const connectDB = require("./utils/db");
 
@@ -25,6 +27,8 @@ app.use((req, res, next) => {
 connectDB();
 
 app.use("/api/users", userRoutes);
+app.use("/api/products", productRoutes);
+app.use("/api/invoice", invoiceRouters);
 
 app.get("/", (req, res) => {
     res.send("Welcome to my API ! e-commerce backed 🤳")

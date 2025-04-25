@@ -40,7 +40,6 @@ exports.userSignUp = async (req, res) => {
     try{
         // Get the data from the request
         const { firstName, email, lastName, imageUrl, role} = req.body;
-        console.log(req.body);
         const hashedPassword = req.hashedPassword;
 
         const newUser = new User({
